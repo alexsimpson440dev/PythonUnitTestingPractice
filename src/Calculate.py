@@ -2,8 +2,8 @@ __author__ = 'Alex'
 
 class Calc:
     def __init__(self, input1, input2):
-        self.input1 = input1
-        self.input2 = input2
+        self.input1 = float(input1)
+        self.input2 = float(input2)
 
     def addition(self):
         return self.input1 + self.input2
