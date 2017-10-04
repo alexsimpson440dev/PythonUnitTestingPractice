@@ -1,35 +1,30 @@
 __author__ = 'Alex'
+#imports Calculate class and initiates constructor
 from src import Calculate
-
 math = Calculate.Calc
+#main with simple loop. while true it does stuff and when false it doesnt
+#gets input and splits into three variables then passes second variable to the get_decision() method
 def main():
-    while True:
         try:
             math.input1,uInput,math.input2 = input("Enter in some maths: ").split(" ")
             math.input1 = float(math.input1)
             math.input2 = float(math.input2)
-            get_decision(uInput)
-            return False
+            if uInput == "+":
+                print(math.addition(math))
+            elif uInput == "-":
+                print(math.subtraction(math))
+            elif uInput == "*":
+                print(math.multiplication(math))
+            elif uInput == "/":
+                print(math.division(math))
+            else:
+                print("Incorrect operator. Please use one of the following: ")
+                main()
+
         except ValueError:
             print("Incorrect Format, Please enter in correct format. E.G: '# + #'.")
+            main()
 
-def get_decision(maths):
-    add = "+"
-    sub = "-"
-    mul = "*"
-    div = "/"
-
-    if maths == add:
-        print(math.addition(math))
-    elif maths == sub:
-        print(math.subtraction(math))
-    elif maths == mul:
-        print(math.multiplication(math))
-    elif maths == div:
-        print(math.division(math))
-    else:
-        print("Not a valid Calculation, Please try again! Valid Calculations: '+', '-', '/', '*'.")
-        main()
-
+#runs main
 if __name__=='__main__':
     main()

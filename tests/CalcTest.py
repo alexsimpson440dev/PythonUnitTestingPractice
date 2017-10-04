@@ -1,7 +1,9 @@
 __author__ = 'Alex'
+#imports unittest and the Calculate file to test
 import unittest
 from src import Calculate
 calc = Calculate.Calc
+#testing class that tests all four functions in the Calculate file
 class CalcTester(unittest.TestCase):
 
     def test_addition_in_calculate(self):
@@ -24,5 +26,6 @@ class CalcTester(unittest.TestCase):
         calc.input2 = 3
         self.assertEqual(calc.division(calc), 1)
 
+#calls the unittest's main method
 if __name__ == '__main__':
     unittest.main()
