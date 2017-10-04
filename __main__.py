@@ -1,5 +1,6 @@
 __author__ = 'Alex'
 from src import Calculate
+
 math = Calculate.Calc
 def main():
     while True:
@@ -11,8 +12,6 @@ def main():
             return False
         except ValueError:
             print("Incorrect Format, Please enter in correct format. E.G: '# + #'.")
-
-
 
 def get_decision(maths):
     add = "+"
